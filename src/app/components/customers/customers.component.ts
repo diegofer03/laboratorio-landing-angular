@@ -1,5 +1,5 @@
 import { Component, ViewChild } from '@angular/core';
-import { faAngleLeft, faAngleRight, faPlus } from '@fortawesome/free-solid-svg-icons';
+import { faAngleLeft, faAngleRight, faCropAlt, faPlus } from '@fortawesome/free-solid-svg-icons';
 import { SwiperOptions } from 'swiper';
 import { SwiperComponent } from 'swiper/angular';
 
@@ -18,6 +18,7 @@ interface Customer {
 export class CustomersComponent {
   faAngleLeft = faAngleLeft;
   faPlus = faPlus
+  faCross = faCropAlt
   faAngleRight = faAngleRight;
 
   config: SwiperOptions = {
