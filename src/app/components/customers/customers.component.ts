@@ -2,7 +2,6 @@ import { Component, ViewChild } from '@angular/core';
 import { faAngleLeft, faAngleRight } from '@fortawesome/free-solid-svg-icons';
 import { SwiperOptions } from 'swiper';
 import { SwiperComponent } from 'swiper/angular';
-import * as moment from 'moment';
 
 interface Customer {
   title: string;
@@ -57,6 +56,21 @@ export class CustomersComponent {
   }
 
   calcTimeAgo(date: Date) {
-    return moment(date).fromNow();
+    const today = new Date()
+    var diff = Math.floor(today.getTime() - date.getTime());
+    var day = 1000 * 60 * 60 * 24;
+
+    var days = Math.floor(diff/day);
+    var months = Math.floor(days/31);
+    var years = Math.floor(months/12);
+
+    var message = date.toDateString();
+    message += " was "
+    message += days + " days "
+    message += months + " months "
+    message += years + " years ago \n"
+
+
+    return  `${months} months ago`
   }
 }
